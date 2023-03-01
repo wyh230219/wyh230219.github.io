@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    1. 学校根据考勤成绩和期末成绩来决定学生是否可以毕业。
+    考勤成绩和期末成绩都在60分以上的学生可以顺利毕业
+    考勤和期末成绩都在60分以下，不能毕业，需要留级
+    考勤成绩小于60分，期末成绩大于60分，延迟毕业
+    考勤成绩大于60分，期末成绩小于60分，可补考
+    创建一个函数，要求满足学校评判要求*/
+    // var clockingIn = prompt('请输入你的考勤成绩：') * 1;
+    // var finalGrade = prompt('请输入你的期末成绩：') * 1;
+    // function score(clockingIn, finalGrade) {
+    //     if (clockingIn >= 60 && finalGrade >= 60) {
+    //         return '顺利毕业';
+    //     } else if (clockingIn < 60 && finalGrade < 60) {
+    //         return '不能毕业，需要留级';
+    //     } else if (clockingIn < 60 && finalGrade >= 60) {
+    //         return '延迟毕业';
+    //     } else if (clockingIn >= 60 && finalGrade < 60) {
+    //         return '要补考';
+    //     }
+    // }
+    // document.write(score(clockingIn, finalGrade));
+
+
+
+
+    // 2. 鸡兔同笼 今有雉兔同笼，上有二十头，下有六十四足，问雉兔各几何？
+    // for (var i = 1; i <= 20; i++) {
+    //     var x = i;
+    //     if (x * 2 + (20 - x) * 4 == 64) {
+    //         document.write('鸡有' + x + '只' + '兔有' + (20 - x) + '只');
+    //     }
+    // }
+
+    // 3. 利用构造函数封装一个实现一个游戏角色并创建5个不同的角色写入到页面中，用表格展示出来
+    function Game(name, age, master) {
+        this.name = '姓名:' + name;
+        this.age = '性别:' + age;
+        this.master = '招式:' + master;
+    }
+    var one = new Game('豌豆射手', 1, '动感光波');
+    var two = new Game('寒冰射手', 1, '动感光波');
+    var three = new Game('王诺', 18, '动感光波');
+    var four = new Game('杨海龙', 18, '动感光波');
+    var five = new Game('董鑫亮', 30, '动感光波');
+    var arr = [one, two, three, four, five]; // 数组进行存放 一会用索引值找到对应的角色 写出角色的属性
+    document.write('<table>');
+    var a = 0;
+    for (const i in arr) {
+        document.write('<tr>');
+        for (const k in arr[i]) {
+            document.write('<td>' + arr[i][k] + ' ' + '</td>');
+            // 用来遍历函数里面的属性和值
+            a++;
+        }
+        document.write('</tr>');
+    }
+    document.write('</table>');
+    for (var i = 0; i < a; i++) {
+        var td = document.getElementsByTagName('td')[i];
+        td.style.border = '1px solid red';
+        td.style.borderCollapse = 'collapse';
+    }
+</script>
+
+</html>
